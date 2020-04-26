@@ -87,21 +87,38 @@
                                 <ul class="navbar-nav mx-auto fables-nav">   
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" href="#home" id="sub-nav1" aria-haspopup="true" aria-expanded="false">
-                                            <span id="menuHome"> </span>
+                                            <span id="menuHome">Home</span>
                                         </a>
                                         
                                     </li>
+									
+									<li class="nav-item dropdown">
+                                        <a class="nav-link" href="#context" id="sub-nav2" aria-haspopup="true" aria-expanded="false">
+                                            <span id="menuContext">Context</span>
+                                        </a>                                        
+                                    </li>
 
+									<li class="nav-item dropdown">
+                                        <a class="nav-link" href="#connect" id="sub-nav3" aria-haspopup="true" aria-expanded="false">
+                                            <span id="menuContext">Connect</span>
+                                        </a>                                        
+                                    </li>	
+									<li class="nav-item dropdown">
+                                        <a class="nav-link" href="#database" id="sub-nav3" aria-haspopup="true" aria-expanded="false">
+                                            <span id="menuContext">Database</span>
+                                        </a>                                        
+                                    </li>									
+									
                                     <li class="nav-item dropdown">										
                                         <a class="nav-link" href="#teamTag" id="sub-nav4" aria-haspopup="true" aria-expanded="false">
-                                            <span id="menuTeam"> </span>
+                                            <span id="menuTeam">Team</span>
                                         </a>
                                     </li>
 
                                     
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#contact" id="sub-nav7" aria-haspopup="true" aria-expanded="false">
-                                            <span id="menuContact"> </span>
+                                        <a class="nav-link" href="#contact" id="sub-nav5" aria-haspopup="true" aria-expanded="false">
+                                            <span id="menuContact">Contact</span>
                                         </a>
                                     
                                     </li>  
@@ -145,11 +162,11 @@
 	 
 	 
 <!-- Start About -->  
-<div class="container"> 
+<div class="container" id="context"> 
     <div class="row mt-4 my-md-5 overflow-hidden" id="about">
 	
 		<!-- example -->
-        <div id="aboutId" class="col-12 col-md-4 mb-4 mb-md-0 wow fadeInDown" data-wow-delay=".6s" style="display: none;">
+        <div id="aboutId" class="col-12 col-md-4 mb-4 mb-md-0 wow fadeInDown" data-wow-delay=".1s" style="display: none;">
             <div class="border p-3 p-md-4 text-center text-lg-left">
                 <div class="row">
                     <div class="col-12 col-lg-3 text-center mb-3 mb-lg-0">
@@ -167,7 +184,7 @@
 </div>
 
 <!-- Wizard Guide -->
-       <div class="fables-choose-background fables-after-overlay py-4 py-md-5 bg-rules overflow-hidden px-3 px-md-0">
+       <div id="connect" class="fables-choose-background fables-after-overlay py-4 py-md-5 bg-rules overflow-hidden px-3 px-md-0">
            <div class="container position-relative z-index">
              <div class="row">
 
@@ -208,17 +225,28 @@
        </div>
 
 
+       <div class="container py-3 py-lg-5" id="database">
+           <div class="container">
+               <div class="row">
 
+                    <h2 class="font-30 font-weight-bold fables-second-text-color">PIRS Database</h2>
+					
+					<iframe class="airtable-embed" src="https://airtable.com/embed/shrxnO9jiFG4yOVnh?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+			   
+               </div>
+               
+           </div>
+       </div>
 
 	 
 <!-- start team section -->
 <div class="container py-3 py-lg-5" id="teamTag">
     <div class="fables-team my-3 text-center">             
        <h3 class="teamTitle font-35 fables-second-text-color mb-5 font-weight-bold"></h3>
-       <div class="row" id="team">
+       <div class="row just-center" id="team">
 	   
 			<!-- example used from JS -->
-            <div class="col-6 col-md-3 mb-4 mb-lg-5" id="teamId" style="display: none;">
+            <div class="col-6 col-md-3 mb-4 mb-lg-5 " id="teamId" style="display: none;" >
                 <div class="card fables-team-block fables-team-data-hover fables-second-border-color mb-4 mb-sm-0">
                   <img class="w-100" src="" alt="Team member image" id="teamImg">
                   <div class="card-body">
@@ -242,16 +270,22 @@
 <div class="fables-footer-image fables-after-overlay white-color py-4 py-lg-5 bg-rules" >
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 text-center offset-md-3 mt-2 mb-5">
-                <h2 class="newsletterTitle font-30 semi-font mb-5"></h2>
-                <form class="form-inline position-relative"> 
-                  <div class="form-group fables-subscribe-formgroup"> 
-                    <input type="email" class="form-control fables-subscribe-input fables-btn-rouned" placeholder="Email">
-                  </div>
-                  <button type="submit" class="subscribeTitle btn fables-second-background-color fables-btn-rouned fables-subscribe-btn">Subscribe</button>
-                </form>
-                
+            
+			<div class="col-12 col-md-6 mb-4 mb-lg-0">
+				<script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+				<iframe class="lazyload airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shrv65UVVh7xshW8Z?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="874" style="background: transparent; border: 0px solid #ccc;"></iframe>
             </div>
+						
+			<div class="col-12 col-md-6 mb-4 mb-lg-0">
+				<script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
+				<iframe class="lazyload airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shr1drJN1QOnhNugF?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="874" style="background: transparent; border: 0px solid #ccc;"></iframe>
+            </div>			
+			
+			<div class="col-12 col-md-12 mb-4 mb-lg-0">
+				&nbsp;
+            </div>			
+		
+			
             <div class="col-12 col-md-6 mb-4 mb-lg-0">
                 <a href="#" class="fables-second-border-color border-bottom pb-3 d-block mb-3 mt-minus-13"><img src="assets/custom/images/logomm.png" alt="fables template"></a>
                 <p class="footerDescription font-18 fables-third-text-color"></p> 
