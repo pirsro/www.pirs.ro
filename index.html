@@ -165,6 +165,51 @@
         </div>
     </div> 
 </div>
+
+<!-- Wizard Guide -->
+       <div class="fables-choose-background fables-after-overlay py-4 py-md-5 bg-rules overflow-hidden px-3 px-md-0">
+           <div class="container position-relative z-index">
+             <div class="row">
+
+                <div class="col-12 col-lg-12 bg-white px-6 py-3 py-md-5 wow fadeInRight" data-wow-delay="1s" data-wow-duration="1.5s">
+                    <h2 class="font-30 font-weight-bold fables-second-text-color">Connect your data to PIRS</h2>
+                    <p class="fables-main-text-color font-14 my-3">
+                        Here you can find details on how to create your own data and connect it to PIRS. You are the owner of you own data!
+                    </p>
+					
+                    <div id="accordion">
+					
+					
+                          <div class="card border-0 mb-2" id="stepId" style="display: none;">
+                            <div class="card-header p-0 border bg-transparent rounded-0" id="headingOne">
+                              <h5 class="mb-0 position-relative">
+                                <span class="fables-second-background-color white-color d-inline-block position-absolute fables-lus-icon pt-2 text-center">
+                                    <i class="fas fa-plus"></i>  
+                                </span>
+                                <button id="stepName" class="btn fables-main-text-color bg-transparent font-18 focus-0 d-block position-relative z-index pl-6 pt-2 pb-2 w-100 text-left border-0 text-truncate" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Step 1
+                                </button>
+                              </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                              <div id="stepDetails" class="card-body fables-forth-text-color font-14 py-1 py-xl-2 pl-6 pr-0">
+                                Lorem ipsum dolor sit amet
+                              </div>
+                            </div>
+                          </div>
+						  
+	
+                    </div>
+                </div>
+             </div>
+
+           </div>
+       </div>
+
+
+
+
 	 
 <!-- start team section -->
 <div class="container py-3 py-lg-5" id="teamTag">
@@ -194,7 +239,7 @@
 
  
  <!-- Start Footer 2 Light  -->
-<div class="fables-light-background-color fables-main-text-color py-5" >
+<div class="fables-footer-image fables-after-overlay white-color py-4 py-lg-5 bg-rules" >
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 text-center offset-md-3 mt-2 mb-5">
@@ -208,8 +253,8 @@
                 
             </div>
             <div class="col-12 col-md-6 mb-4 mb-lg-0">
-                <a href="#" class="fables-second-border-color border-bottom pb-3 d-block mb-3 mt-minus-13"><img src="assets/custom/images/logomm.red.png" alt="fables template"></a>
-                <p class="footerDescription font-15 fables-main-text-color"></p> 
+                <a href="#" class="fables-second-border-color border-bottom pb-3 d-block mb-3 mt-minus-13"><img src="assets/custom/images/logomm.png" alt="fables template"></a>
+                <p class="footerDescription font-18 fables-third-text-color"></p> 
                 
             </div>
              
@@ -223,7 +268,7 @@
 						<span id="contactIcon" ></span>
 						<span id="contactProperty"></span>
 					</h4>
-                    <p id="contactValue" class="font-14 fables-forth-text-color mt-2 ml-4">level13, 2Elizabeth St, Melbourne, Victor 2000</p>
+                    <p id="contactValue" class="font-18 fables-third-text-color">Timisoara</p>
                 </div>
 						
 				
@@ -266,7 +311,6 @@ function site (item) {
 request2 (initialURL.replace("XXXXX", "Site"), site);
 
 
-//var url = "https://sheet.best/api/sheets/469711c1-db71-4adf-83e3-59ddd8326c81/tabs/Team";
 function team (item) {
 	var itm = document.getElementById("teamId");
 	document.getElementById("teamImg").src = item.img;
@@ -285,7 +329,6 @@ request2 (initialURL.replace("XXXXX", "Team"), team);
 var items;
 var aboutClassList = document.getElementById("aboutIcon").className;
 var contactClassList = document.getElementById("contactIcon").className;
-//url = "https://sheet.best/api/sheets/469711c1-db71-4adf-83e3-59ddd8326c81/tabs/Items";
 function services (item) {
 
 
@@ -308,10 +351,18 @@ function services (item) {
 		var cln = document.getElementById("contactId").cloneNode(true);
 		cln.style.display = "inline";	
 		document.getElementById("contact").appendChild(cln);
-	}
+	} else if (item.category === "step") {
+			
+		document.getElementById("stepName").innerHTML = item.property;
+		document.getElementById("stepDetails").innerHTML = item.value;
+		
+		var cln = document.getElementById("stepId").cloneNode(true);
+		cln.style.display = "inline";	
+		document.getElementById("accordion").appendChild(cln);
+	} 
 }
 
-items = request2 (initialURL.replace("XXXXX", "Item"), services);
+items = request2 (initialURL.replace("XXXXX", "Item") + "&sort%5B0%5D%5Bfield%5D=ID", services);
 
 
 function request2 (url, fnc, last) {
